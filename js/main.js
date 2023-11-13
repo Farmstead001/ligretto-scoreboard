@@ -18,10 +18,6 @@ var player6 = 'player6';
 var player7 = 'player7';
 var player8 = 'player8';
 
-var root = document.querySelector(':root');
-
-let colorPalette1 = {background: "#D83F31", boards: "#EE9322", buttons: "#E9B824", linkBackground: "#219C90", text: "#fff"}
-
 function onload() {
     document.getElementById("divcounter8").style.display = "none";
     document.getElementById("divcounter7").style.display = "none";
@@ -33,41 +29,65 @@ function subtract(counter) {
     switch (counter) {
         case 1:
             counter1 -= parseInt(prompt("player1 minus: "));
+            if (isNaN(counter1)) {
+                break;
+            }
             document.getElementById("counter1").innerHTML = counter1;
             break;
 
         case 2:
             counter2 -= parseInt(prompt("player2 minus: "));
+            if (isNaN(counter2)) {
+                break;
+            }
             document.getElementById("counter2").innerHTML = counter2;
             break;
 
         case 3:
             counter3 -= parseInt(prompt("player3 minus: "));
+            if (isNaN(counter3)) {
+                break;
+            }
             document.getElementById("counter3").innerHTML = counter3;
             break;
 
         case 4:
             counter4 -= parseInt(prompt("player4 minus: "));
+            if (isNaN(counter4)) {
+                break;
+            }
             document.getElementById("counter4").innerHTML = counter4;
             break;
 
         case 5:
             counter5 -= parseInt(prompt("player5 minus: "));
+            if (isNaN(counter5)) {
+                break;
+            }
             document.getElementById("counter5").innerHTML = counter5;
             break;
 
         case 6:
             counter6 -= parseInt(prompt("player6 minus: "));
+            if (isNaN(counter6)) {
+                break;
+            }
             document.getElementById("counter6").innerHTML = counter6;
             break;
 
         case 7:
             counter7 -= parseInt(prompt("player7 minus: "));
+            if (isNaN(counter7)) {
+                break;
+            }
             document.getElementById("counter7").innerHTML = counter7;
             break;
 
         case 8:
             counter8 -= parseInt(prompt("player8 minus: "));
+            if (isNaN(counter8)) {
+                break;
+            }
             document.getElementById("counter8").innerHTML = counter8;
             break;
     }
@@ -79,41 +99,65 @@ function add(counter) {
     switch (counter) {
         case 1:
             counter1 += parseInt(prompt("player1 plus: "));
+            if (isNaN(counter1)) {
+                break;
+            }
             document.getElementById("counter1").innerHTML = counter1;
             break;
 
         case 2:
             counter2 += parseInt(prompt("player2 plus: "));
+            if (isNaN(counter2)) {
+                break;
+            }
             document.getElementById("counter2").innerHTML = counter2;
             break;
 
         case 3:
             counter3 += parseInt(prompt("player3 plus: "));
+            if (isNaN(counter3)) {
+                break;
+            }
             document.getElementById("counter3").innerHTML = counter3;
             break;
 
         case 4:
             counter4 += parseInt(prompt("player4 plus: "));
+            if (isNaN(counter4)) {
+                break;
+            }
             document.getElementById("counter4").innerHTML = counter4;
             break;
 
         case 5:
             counter5 += parseInt(prompt("player5 plus: "));
+            if (isNaN(counter5)) {
+                break;
+            }
             document.getElementById("counter5").innerHTML = counter5;
             break;
 
         case 6:
             counter6 += parseInt(prompt("player6 plus: "));
+            if (isNaN(counter6)) {
+                break;
+            }
             document.getElementById("counter6").innerHTML = counter6;
             break;
 
         case 7:
             counter7 += parseInt(prompt("player7 plus: "));
+            if (isNaN(counter7)) {
+                break;
+            }
             document.getElementById("counter7").innerHTML = counter7;
             break;
 
         case 8:
             counter8 += parseInt(prompt("player8 plus: "));
+            if (isNaN(counter8)) {
+                break;
+            }
             document.getElementById("counter8").innerHTML = counter8;
             break;
     }
@@ -130,6 +174,15 @@ function save() {
     localStorage.setItem("counter6", counter6);
     localStorage.setItem("counter7", counter7);
     localStorage.setItem("counter8", counter8);
+
+    localStorage.setItem("player1", player1);
+    localStorage.setItem("player2", player2);
+    localStorage.setItem("player3", player3);
+    localStorage.setItem("player4", player4);
+    localStorage.setItem("player5", player5);
+    localStorage.setItem("player6", player6);
+    localStorage.setItem("player7", player7);
+    localStorage.setItem("player8", player8);
 }
 
 function load() {
@@ -150,6 +203,24 @@ function load() {
     document.getElementById("counter6").innerHTML = counter6;
     document.getElementById("counter7").innerHTML = counter7;
     document.getElementById("counter8").innerHTML = counter8;
+
+    player1 = localStorage.getItem("player1");
+    player2 = localStorage.getItem("player2");
+    player3 = localStorage.getItem("player3");
+    player4 = localStorage.getItem("player4");
+    player5 = localStorage.getItem("player5");
+    player6 = localStorage.getItem("player6");
+    player7 = localStorage.getItem("player7");
+    player8 = localStorage.getItem("player8");
+
+    document.getElementById("player1").innerHTML = player1;
+    document.getElementById("player2").innerHTML = player2;
+    document.getElementById("player3").innerHTML = player3;
+    document.getElementById("player4").innerHTML = player4;
+    document.getElementById("player5").innerHTML = player5;
+    document.getElementById("player6").innerHTML = player6;
+    document.getElementById("player7").innerHTML = player7;
+    document.getElementById("player8").innerHTML = player8;
 }
 
 function reset() {
@@ -161,8 +232,6 @@ function reset() {
     counter6 = 0;
     counter7 = 0;
     counter8 = 0;
-
-    
 
     localStorage.setItem("counter1", counter1);
     localStorage.setItem("counter2", counter2);
@@ -182,14 +251,14 @@ function reset() {
     document.getElementById("counter7").innerHTML = counter7;
     document.getElementById("counter8").innerHTML = counter8;
 
-    player1 = 'player1';
-    player2 = 'player2';
-    player3 = 'player3';
-    player4 = 'player4';
-    player5 = 'player5';
-    player6 = 'player6';
-    player7 = 'player7';
-    player8 = 'player8';
+    player1 = 'player 1';
+    player2 = 'player 2';
+    player3 = 'player 3';
+    player4 = 'player 4';
+    player5 = 'player 5';
+    player6 = 'player 6';
+    player7 = 'player 7';
+    player8 = 'player 8';
 
     document.getElementById("player1").innerHTML = player1;
     document.getElementById("player2").innerHTML = player2;
